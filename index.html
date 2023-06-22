@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rockpaperscissor</title>
+</head>
+<script>
+function getRandomChoice() {
+  let choices = ["Rock", "Paper", "Scissors"];
+  let randomIndex = Math.floor(Math.random() * choices.length);
+  return choices[randomIndex];
+}
+
+let computerChoice = getRandomChoice();
+console.log("Computer choice: " + computerChoice);
+
+let playerSelect = prompt("Enter your choice (Rock/Paper/Scissors):");
+
+function playRound(playerSelect, computerChoice) {
+  console.log("Player's choice: " + playerSelect);
+
+  if (playerSelect.toLowerCase() === computerChoice.toLowerCase()) {
+    return "It's a tie!";
+  } else if (playerSelect.toLowerCase() === "rock" && computerChoice.toLowerCase() === "scissors") {
+    return "Player wins!";
+  } else if (playerSelect.toLowerCase() === "paper" && computerChoice.toLowerCase() === "rock") {
+    return "Player wins!";
+  } else if (playerSelect.toLowerCase() === "scissors" && computerChoice.toLowerCase() === "paper") {
+    return "Player wins!";
+  } else {
+    return "Computer wins!";
+  }
+}
+
+let result = playRound(playerSelect, computerChoice);
+console.log(result);
+
+</script>
+<body>
+    
+</body>
+</html>
